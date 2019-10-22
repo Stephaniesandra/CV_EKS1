@@ -1,0 +1,295 @@
+body {
+  margin: 2em 1em; }
+
+header {
+  height: 80px; }
+  header h1 {
+    margin: 0;
+    font-family: "Bad Script", cursive;
+    size: 26px;
+    float: right;
+    font-weight: 200; }
+    header h1 a {
+      text-decoration: none;
+      color: #000; }
+  header nav {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    z-index: 1000; }
+    header nav .burger {
+      position: absolute;
+      cursor: pointer;
+      margin-top: 15px; }
+    header nav .burger span {
+      background-color: #000;
+      width: 36px;
+      height: 4px;
+      display: block;
+      margin-bottom: 8px;
+      position: relative;
+      transition: .5s;
+      border-radius: 2px; }
+      header nav .burger span:nth-child(1) {
+        transform-origin: left; }
+      header nav .burger span:nth-child(2) {
+        transform-origin: center; }
+      header nav .burger span:nth-child(3) {
+        transform-origin: left; }
+    header nav .burger.active span:nth-child(1) {
+      transform: rotate(45deg);
+      left: 3px; }
+    header nav .burger.active span:nth-child(2) {
+      transform: rotate(315deg);
+      right: 3px;
+      top: 1px; }
+    header nav .burger.active span:nth-child(3) {
+      transform: scaleX(0); }
+    header nav ul {
+      padding: 0; }
+      header nav ul li {
+        font-family: "BenchNine", sans-serif;
+        font-weight: 100;
+        font-size: 20px;
+        display: none;
+        letter-spacing: 1pt;
+        border-bottom-color: darkgrey;
+        border-bottom-style: solid;
+        border-bottom-width: 0.5px; }
+        header nav ul li a {
+          text-decoration: none;
+          color: #000; }
+          header nav ul li a:hover {
+            color: darkgrey; }
+        header nav ul li .fas {
+          font-size: 24px; }
+      header nav ul li.open {
+        padding: 20px 0;
+        float: none;
+        display: block;
+        color: #000;
+        letter-spacing: 2px;
+        background-color: #fff;
+        overflow: visible;
+        width: 100%; }
+
+.potfolio {
+  margin-top: 45px;
+  display: grid;
+  grid-gap: 1%; }
+  .potfolio .box {
+    position: relative; }
+    .potfolio .box .imageOpg {
+      width: 100%; }
+    .potfolio .box .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #fff; }
+      .potfolio .box .overlay:hover {
+        opacity: 0.6; }
+      .potfolio .box .overlay .opgave {
+        color: #000;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: "BenchNine", sans-serif; }
+
+/* Section Om mig */
+section {
+  margin-top: 45px; }
+  section h2 {
+    font-family: 'BenchNine', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 400; }
+  section p {
+    font-family: 'BenchNine', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 100; }
+  section .buttonweb {
+    display: none; }
+  section .picture img {
+    width: 100%;
+    margin-top: 15px; }
+  section .buttonbox .button {
+    padding: 10px 0;
+    background-color: dimgray;
+    display: inline-block;
+    color: #fff;
+    font-family: "BenchNine", sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    cursor: pointer;
+    margin-top: 22.5px;
+    width: 100%; }
+    section .buttonbox .button:hover {
+      font-weight: bold;
+      background-color: darkgrey; }
+
+/* Sectoin Kontakt */
+section form input {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-weight: 100;
+  width: 99%;
+  padding: 10px 0 10px 3px;
+  margin: 8px 0;
+  font-size: 16px;
+  border-color: darkgrey;
+  border-width: 1px;
+  border-style: solid; }
+
+section form textarea {
+  font-family: 'BenchNine', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-weight: 100;
+  width: 99%;
+  height: 100px;
+  margin-top: 8px;
+  font-size: 16px;
+  padding: 10px 0 10px 3px;
+  border-color: darkgrey;
+  border-style: solid; }
+
+section form .contactButton {
+  margin-top: 8px;
+  float: right; }
+  section form .contactButton button {
+    padding: 10px 15px;
+    background-color: dimgray;
+    color: #fff;
+    font-family: "BenchNine", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer; }
+    section form .contactButton button:hover {
+      background-color: darkgrey; }
+
+footer {
+  font-size: 18px;
+  text-align: right;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  letter-spacing: 3px; }
+  footer a {
+    color: #000; }
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 85px 80px; }
+  header nav .burger {
+    display: none; }
+  header nav ul li {
+    border: none;
+    display: inline;
+    margin: 0 20px; }
+    header nav ul li a {
+      color: darkgrey; }
+      header nav ul li a:hover {
+        color: dimgray; }
+  header h1 {
+    text-align: center;
+    float: none;
+    font-size: 32pt; }
+  hr {
+    display: none; }
+  .potfolio {
+    margin-top: 90px;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2% 2%; }
+  section h2 {
+    margin-top: 135px; } }
+
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 85px 140px; }
+  .potfolio {
+    grid-template-columns: 32% 32% 32%; }
+  /* Section Om mig */
+  section {
+    display: flex;
+    margin-top: 135px; }
+    section .about {
+      order: 2;
+      padding-left: 45px;
+      height: 100%;
+      width: 100%; }
+      section .about h2 {
+        margin-top: 0;
+        font-size: 2.6vw; }
+      section .about p {
+        font-size: 1.6vw; }
+      section .about .buttonweb {
+        display: block; }
+        section .about .buttonweb .button {
+          padding: 10px 0;
+          background-color: dimgray;
+          display: inline-block;
+          color: #fff;
+          font-family: "BenchNine", sans-serif;
+          font-size: 20px;
+          letter-spacing: 2px;
+          text-decoration: none;
+          transition-duration: 0.4s;
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          text-align: center;
+          cursor: pointer;
+          width: 80px;
+          padding: 5px 0;
+          margin-top: 10px; }
+          section .about .buttonweb .button:hover {
+            font-weight: bold;
+            background-color: darkgrey; }
+    section .picture {
+      order: 1;
+      height: 80%;
+      width: 80%; }
+      section .picture img {
+        margin-top: 0; }
+    section .buttonbox {
+      display: none; }
+  /* Sectoin Kontakt */
+  section .contact {
+    margin-right: 150px;
+    padding-left: 180px; }
+    section .contact h2 {
+      margin: 0;
+      font-size: 2.6vw;
+      text-align: left; }
+    section .contact p {
+      font-size: 1.6vw; }
+  section .contactButton {
+    display: block; }
+    section .contactButton button {
+      padding: 10px 15px;
+      background-color: dimgray;
+      color: #fff;
+      font-family: "BenchNine", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition-duration: 0.4s;
+      cursor: pointer; }
+      section .contactButton button:hover {
+        background-color: darkgrey; } }

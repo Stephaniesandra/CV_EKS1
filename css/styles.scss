@@ -1,0 +1,384 @@
+@import "colorsandfonts";
+
+$margin-top: 45px;
+$tablet: "screen and (min-width: 768px)";
+$computer: "screen and (min-width: 1200px)";
+
+body {
+  margin: 2em 1em;
+}
+
+
+header {
+  height: 80px;
+
+  h1 {
+    margin: 0;
+    font-family: $FontHeader;
+    size: 26px;
+    float: right;
+    font-weight: 200;
+
+    a {
+      text-decoration: none;
+      color: $black;
+    }
+  }
+
+  nav {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+
+
+    .burger {
+      position: absolute;
+      cursor: pointer;
+      margin-top: 15px;
+
+
+    }
+
+    .burger span {
+      background-color: $black;
+      width: 36px;
+      height: 4px;
+      display: block;
+      margin-bottom: 8px;
+      position: relative;
+      transition: .5s;
+      border-radius: 2px;
+
+      &:nth-child(1) {
+        transform-origin: left;
+      }
+
+      &:nth-child(2) {
+        transform-origin: center;
+      }
+
+      &:nth-child(3) {
+        transform-origin: left;
+      }
+    }
+
+    .burger.active span:nth-child(1) {
+      transform: rotate(45deg);
+      left: 3px;
+    }
+
+    .burger.active span:nth-child(2) {
+      transform: rotate(315deg);
+      right: 3px;
+      top: 1px;
+    }
+
+    .burger.active span:nth-child(3) {
+      transform: scaleX(0);
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        font-family: $FontText;
+        font-weight: 100;
+        font-size: 20px;
+        display: none;
+        letter-spacing: 1pt;
+        border-bottom: {
+          color: $LightGrey;
+          style: solid;
+          width: 0.5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $black;
+
+          &:hover {
+            color: $LightGrey;
+          }
+        }
+
+        .fas {
+          font-size: 24px;
+        }
+      }
+
+      li.open {
+        padding: 20px 0;
+        float: none;
+        display: block;
+        color: $black;
+        letter-spacing: 2px;
+        background-color: $white;
+        overflow: visible;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+.potfolio {
+  margin-top: $margin-top;
+  display: grid;
+  grid-gap: 1%;
+
+  .box {
+    position: relative;
+
+    .imageOpg {
+      width: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: $white;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      .opgave {
+        color: $black;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: $FontText;
+      }
+    }
+  }
+}
+
+
+/* Section Om mig */
+
+section {
+margin-top: $margin-top;
+
+  h2 {
+    @include mellemrubrik;
+  }
+
+  p {
+    @include brodtekst;
+  }
+
+  .buttonweb {
+    display: none;
+  }
+
+  .picture {
+    img {
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+
+  .buttonbox {
+    .button {
+      @include buttonMe;
+      margin-top: $margin-top / 2;
+      width: 100%;
+    }
+  }
+}
+
+
+/* Sectoin Kontakt */
+section {
+  form {
+
+    input {
+      @include brodtekst;
+      width: 99%;
+      padding: 10px 0 10px 3px;
+      margin: 8px 0;
+      font-size: 16px;
+      border: {
+        color: $LightGrey;
+        width: 1px;
+        style: solid;
+      }
+    }
+
+    textarea {
+      @include brodtekst;
+      width: 99%;
+      height: 100px;
+      margin-top: 8px;
+      font-size: 16px;
+      padding: 10px 0 10px 3px;
+      border: {
+        color: $LightGrey;
+        style: solid;
+      }
+    }
+
+    .contactButton {
+      margin-top: 8px;
+      float: right;
+
+      button {
+        @include buttonContact;
+      }
+    }
+  }
+}
+
+footer {
+  @include some;
+}
+
+
+@media #{$tablet} {
+  body {
+    margin: 85px 80px;
+  }
+
+  header {
+    nav {
+
+      .burger {
+        display: none;
+      }
+
+      ul {
+
+        li {
+          border: none;
+          display: inline;
+          margin: 0 20px;
+
+          a {
+            color: $LightGrey;
+
+            &:hover {
+              color: darken($LightGrey, 25%);
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      text-align: center;
+      float: none;
+      font-size: 32pt;
+    }
+  }
+
+  hr {
+    display: none;
+  }
+
+  .potfolio {
+    margin-top: $margin-top * 2;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2% 2%;
+  }
+
+  section {
+    h2 {
+      margin-top: $margin-top * 3;
+    }
+  }
+}
+
+@media #{$computer} {
+  body {
+    margin: 85px 140px;
+  }
+
+  .potfolio {
+    grid-template-columns: 32% 32% 32%;
+  }
+
+
+  /* Section Om mig */
+  section {
+    display: flex;
+    margin-top: $margin-top * 3;
+
+    .about {
+      order: 2;
+      padding-left: 45px;
+      height: 100%;
+      width: 100%;
+
+      h2 {
+        margin-top: 0;
+        font-size: 2.6vw;
+      }
+
+      p {
+        font-size: 1.6vw;
+      }
+
+      .buttonweb {
+        display: block;
+
+        .button {
+          @include buttonMe;
+          width: 80px;
+          padding: 5px 0;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .picture {
+      order: 1;
+      height: 80%;
+      width: 80%;
+
+      img {
+        margin-top: 0;
+      }
+    }
+
+    .buttonbox {
+      display: none;
+    }
+  }
+
+
+  /* Sectoin Kontakt */
+  section {
+
+    .contact {
+      margin-right: 150px;
+      padding-left: 180px;
+
+      h2 {
+        margin: 0;
+        font-size: 2.6vw;
+        text-align: left;
+      }
+
+      p {
+        font-size: 1.6vw;
+      }
+    }
+
+    .contactButton {
+      display: block;
+
+      button {
+        @include buttonContact;
+      }
+    }
+  }
+}

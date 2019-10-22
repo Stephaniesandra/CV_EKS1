@@ -1,22 +1,72 @@
 @import "colorsandfonts";
 
+$tablet: "screen and (min-width: 768px)";
+$computer: "screen and (min-width: 1200px)";
+
 body {
   background: url("../images/dot-grid.png") repeat;
 }
 
-.cirkel {
-  margin: 150px auto 0;
-  width: 300px;
-  height: 300px;
-  border-radius: 200px;
-  background-color: darken($LightGrey, 30);
-  opacity: 0.5;
+.container {
+  margin: 2em 1em;
+  background-color: $white;
+  opacity: 0.8;
+  padding: 1rem;
+  text-align: center;
 
-  .cirkelinner {
-    margin: 150px auto 0;
-    width: 200px;
-    height: 200px;
-    border-radius: 200px;
-    background-color: darken($LightGrey, 30);
+  h1 {
+    font-family: $FontHeader;
+  }
+
+  p {
+    @include brodtekst;
+  }
+
+  .contactButton {
+    margin: 40px 0 50px 0;
+    text-align: center;
+
+    .button {
+      @include buttonContact;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+
+@media #{$tablet} {
+
+  body {
+  margin: 85px 80px;
+  }
+
+  .container {
+    img {
+      width: 70%;
+    }
+  }
+}
+
+@media #{$computer} {
+  body {
+    margin: 85px 140px;
+  }
+
+  .container {
+    h1 {
+      margin: 0;
+      font-size: 3vw;
+    }
+
+    p {
+      font-size: 1.6vw;
+    }
+
+    img {
+      margin: -30px 0;
+    }
   }
 }

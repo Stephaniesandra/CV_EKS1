@@ -16,7 +16,7 @@ body {
     line-height: 1.5;
     font-weight: 100; }
   .container .contactButton {
-    margin: 40px 0 50px 0;
+    margin: 50px 0 50px 0;
     text-align: center; }
     .container .contactButton .button {
       padding: 10px 15px;
@@ -47,5 +47,5 @@ body {
     font-size: 3vw; }
   .container p {
     font-size: 1.6vw; }
-  .container img {
-    margin: -30px 0; } }
+  .container .contactButton {
+    margin-top: 80px; } }

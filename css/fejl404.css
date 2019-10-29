@@ -3,7 +3,7 @@ body {
 
 .container {
   margin: 2em 1em;
-  background-color: #fff;
+  background-color: white;
   opacity: 0.8;
   padding: 1rem;
   text-align: center; }
@@ -16,7 +16,7 @@ body {
     line-height: 1.5;
     font-weight: 100; }
   .container .contactButton {
-    margin: 50px 0 50px 0;
+    margin: 50px 0;
     text-align: center; }
     .container .contactButton .button {
       padding: 10px 15px;
@@ -31,17 +31,17 @@ body {
       .container .contactButton .button:hover {
         background-color: darkgrey; }
   .container img {
-    width: 100%; }
+    width: 80%; }
 
 @media screen and (min-width: 768px) {
   body {
-    margin: 85px 80px; }
+    margin: 45px 80px; }
   .container img {
-    width: 70%; } }
+    width: 50%; } }
 
 @media screen and (min-width: 1200px) {
   body {
-    margin: 85px 140px; }
+    margin: 55px 140px; }
   .container h1 {
     margin: 0;
     font-size: 3vw; }
